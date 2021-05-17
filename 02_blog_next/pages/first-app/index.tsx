@@ -1,10 +1,13 @@
 import React from "react";
 
-const FirstApp = () => {
+import { Layout } from "../../components/layout";
+
+
+const FirstApp : React.FC = () => {
   return (
-    <div>
+    <Layout>
       <h2>First App</h2>
-    </div>
+    </Layout>
   );
 };
 
