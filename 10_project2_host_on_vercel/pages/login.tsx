@@ -34,7 +34,7 @@ const LoginForm: React.FC = (props) => {
               ref={emailRef}
             ></input>
             <input
-              type="text"
+              type="password"
               id="password"
               className="fadeIn third"
               name="login"

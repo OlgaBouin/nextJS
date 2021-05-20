@@ -25,7 +25,7 @@ const Menu: React.FC<string> = (props: any) => {
               <tr key={"line" + index}>
                 <th key={"line" + element.name}>{element.name}</th>
                 <th key={"line" + element.email}>{element.email}</th>
-                <th key={"link" + index}><a href={"/users/"+element._id+"/profile"}>Edit : {element._id}</a></th>
+                <th key={"link" + index}><a href={"/users/ids/"+element._id}>Edit </a></th>
               </tr>
             );
           })}
