@@ -15,7 +15,8 @@ const Games: React.FC = (props: any) => {
             return (
               <div className="col">
                 <div className="card shadow-sm">
-                  <img key={"gameImage"+index+element.slug}
+                  <img
+                    key={"gameImage" + index + element.slug}
                     src={
                       element.cover != undefined
                         ? "https:" + element.cover.url
@@ -28,7 +29,15 @@ const Games: React.FC = (props: any) => {
                   ></img>
                   <div className="card-body">
                     <p className="card-text">
-                    <b key={"gameName"+index+element.slug}>{element.name} </b><br></br><span key={"gameSummary"+index+element.slug}>{element.summary.slice(0,100)+"..."}</span>
+                      <b key={"gameName" + index + element.slug}>
+                        {element.name}{" "}
+                      </b>
+                      <br></br>
+                      <span key={"gameSummary" + index + element.slug}>
+                      {element.summary.slice(0, 35)} <br></br>{" "}
+                      {element.summary.slice(35, 70)} <br></br>{" "}
+                      {element.summary.slice(70, 105) + "..."}
+                      </span>
                     </p>
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
@@ -38,14 +47,20 @@ const Games: React.FC = (props: any) => {
                         >
                           View
                         </button>
-                        <button key={"gamePrice"+index+element.slug}
+                        <button
+                          key={"gamePrice" + index + element.slug}
                           type="button"
                           className="btn btn-sm btn-outline-secondary"
                         >
                           Buy {element.price / 100} €
                         </button>
                       </div>
-                      <small className="text-muted" key={"gamePlatform"+index+element.slug}>{element.platform.name}</small>
+                      <small
+                        className="text-muted"
+                        key={"gamePlatform" + index + element.slug}
+                      >
+                        {element.platform.name}
+                      </small>
                     </div>
                   </div>
                 </div>

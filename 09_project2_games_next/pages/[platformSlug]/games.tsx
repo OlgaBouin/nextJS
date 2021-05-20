@@ -28,7 +28,10 @@ const Games: React.FC = (props: any) => {
                   ></img>
                   <div className="card-body">
                     <p className="card-text">
-                    <b>{element.name} </b><br></br> {element.summary.slice(0,35)} <br></br> {element.summary.slice(35,70)} <br></br> {element.summary.slice(70,105)+"..."}
+                      <b>{element.name} </b>
+                      <br></br> {element.summary.slice(0, 35)} <br></br>{" "}
+                      {element.summary.slice(35, 70)} <br></br>{" "}
+                      {element.summary.slice(70, 105) + "..."}
                     </p>
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
@@ -45,7 +48,9 @@ const Games: React.FC = (props: any) => {
                           Buy {element.price / 100} €
                         </button>
                       </div>
-                      <small className="text-muted">{element.platform.name}</small>
+                      <small className="text-muted">
+                        {element.platform.name}
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -69,7 +74,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const allGames = await mongoDataBase
     .db("project2")
     .collection("games")
-    .find({"platform.slug": context.query.platformSlug})
+    .find({ "platform.slug": context.query.platformSlug })
     .toArray();
 
   return {
